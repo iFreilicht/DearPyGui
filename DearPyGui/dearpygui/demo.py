@@ -6,7 +6,7 @@ import dearpygui.demo_drawlist as drawlist
 import dearpygui.demo_nodes as nodes
 import dearpygui.demo_widgets as widgets
 import dearpygui.demo_layouts as layouts
-from dearpygui.common import _log, _config, _help, _hsv_to_rgb
+from dearpygui.demo_common import _log, _config, _help, _hsv_to_rgb
 
 def show_demo():
     dpg.configure_item("Dear PyGui Demo", show=True)

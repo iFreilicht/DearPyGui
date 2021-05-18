@@ -2,6 +2,7 @@ import shutil
 import os
 from os import path
 import sys
+from glob import iglob
 
 # arg 1 - Location (i.e. /../../cmake-build-release/DearPyGui/Release/dearpygui.pyd)
 # arg 2 - File     (i.e. dearpygui.pyd, dearpygui.so)
@@ -21,7 +22,8 @@ shutil.copy(script_dir + "/../DearPyGui/dearpygui/core.pyi", script_dir + "/dear
 shutil.copy(script_dir + "/../DearPyGui/dearpygui/simple.py", script_dir + "/dearpygui")
 shutil.copy(script_dir + "/../DearPyGui/dearpygui/contexts.py", script_dir + "/dearpygui")
 shutil.copy(script_dir + "/../DearPyGui/dearpygui/themes.py", script_dir + "/dearpygui")
-shutil.copy(script_dir + "/../DearPyGui/dearpygui/demo.py", script_dir + "/dearpygui")
+for demo_file in iglob(script_dir + "/../DearPyGui/dearpygui/demo*.py"):
+    shutil.copy(demo_file, script_dir + "/dearpygui")
 shutil.copy(script_dir + "/../Distribution/vcruntime140_1.dll", script_dir + "/dearpygui")
 
 with open(script_dir + "/dearpygui/__init__.py", 'w') as file:
