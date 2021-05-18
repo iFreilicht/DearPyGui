@@ -12,6 +12,7 @@ def _help(message):
 def _log(sender, data):
     dpg.log_debug(f"Sender was {sender}.", logger="Demo Logger")
     dpg.log_debug(f"Data was {data}.", logger="Demo Logger")
+    dpg.log_debug(f"Sender value was {dpg.get_value(sender)}", logger="Demo Logger")
 
 def _config(sender, data):
 
